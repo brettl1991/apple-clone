@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { navItems } from "../../data";
+import { navItems } from "../../data/navbarData";
 import NavbarItem from "./NavbarItem";
 import styled from "styled-components";
 import { navContainerType } from "./NavbarItem.type";
