@@ -1,4 +1,4 @@
-export const sectionData = [
+export const shopData = [
   {
     id: "shop section",
     title: "Get 0% finance up to 24 months. Limited-time offer.",
