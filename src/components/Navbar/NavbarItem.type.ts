@@ -25,5 +25,5 @@ export type submenuType = {
 };
 
 export type navContainerType = {
-  mouseHover: boolean;
+  mouseHover?: boolean;
 };

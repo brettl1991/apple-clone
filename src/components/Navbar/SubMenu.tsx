@@ -2,7 +2,6 @@ import { submenuType } from "./NavbarItem.type";
 import styled from "styled-components";
 
 const SubMenu = ({ submenu }: submenuType) => {
-  console.log("submenu:", submenu);
   return (
     <SubDiv>
       <SubDivUl>
