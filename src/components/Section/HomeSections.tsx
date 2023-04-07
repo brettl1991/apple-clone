@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import { heroData, sectionData } from "../../data/sectionData";
+import { heroData, shopData } from "../../data/sectionData";
 import ShopSection from "./ShopSection/ShopSection";
 import HeroSection from "./HeroSection/HeroSection";
 
 const HomeSections = () => {
   return (
     <section>
-      {sectionData.map((item, id) => {
+      {shopData.map((item, id) => {
         return (
           <ShopSection
             key={item.id}
