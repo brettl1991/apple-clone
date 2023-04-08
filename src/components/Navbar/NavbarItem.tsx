@@ -36,7 +36,10 @@ const SyledNavBarItem = styled.div`
   height: 44px;
 
   &:hover > div {
-    display: flex;
+    visibility: visible;
+    transition: all 0.25s ease-in; /* here */
+    transform: translateY(1px); /* here */
+
     justify-content: center;
   }
 `;

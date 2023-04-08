@@ -23,8 +23,10 @@ const SubMenu = ({ submenu }: submenuType) => {
 };
 
 const SubDiv = styled.div`
-  display: none;
+  display: flex;
+  visibility: hidden;
   position: absolute;
+
   left: 0;
   right: 0;
   top: 44px;
