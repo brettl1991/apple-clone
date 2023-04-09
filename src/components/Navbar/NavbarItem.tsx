@@ -37,8 +37,8 @@ const SyledNavBarItem = styled.div`
 
   &:hover > div {
     visibility: visible;
-    transition: all 0.25s ease-in; /* here */
-    transform: translateY(1px); /* here */
+    transition: all 0.2s ease-in;
+    transform: translateY(1px);
 
     justify-content: center;
   }
