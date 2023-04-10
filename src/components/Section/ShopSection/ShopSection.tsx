@@ -13,7 +13,7 @@ const ShopSection = ({
       <Text>
         {title}{" "}
         <sup>
-          <a href="#">1</a>
+          <a href={url}>1</a>
         </sup>
         &nbsp;&nbsp;&nbsp;
         <a href={url}>
@@ -63,6 +63,5 @@ const Img = styled.img`
   padding-left: 0.2em;
   color: #06c;
   width: 12px;
-
   letter-spacing: inherit;
 `;

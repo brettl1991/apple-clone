@@ -6,7 +6,7 @@ import HeroSection from "./HeroSection/HeroSection";
 
 const HomeSections = () => {
   return (
-    <section>
+    <MainSectionStyle>
       {shopData.map((item, id) => {
         return (
           <ShopSection
@@ -25,16 +25,21 @@ const HomeSections = () => {
             url={item.url}
             title={item.title}
             subTitle={item.sub_title}
-            linkFirst={item.url_title_first}
+            links={item.url_title_links}
             svgPath={item.svg_path}
-            linkSecond={item.url_title_second}
             imgPath={item.img_path}
             titleImgPath={item.title_img_path}
+            titleColor={item.title_color}
           />
         );
       })}
-    </section>
+    </MainSectionStyle>
   );
 };
+
+const MainSectionStyle = styled.section`
+  display: flex;
+  flex-direction: column;
+`;
 
 export default HomeSections;

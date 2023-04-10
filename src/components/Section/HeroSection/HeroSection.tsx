@@ -1,51 +1,108 @@
-import { heroSectionType } from "../Section.type";
+import styled from "styled-components";
+import {
+  ContentStyleType,
+  HeroSectionType,
+  MainImageStyleType,
+  TitleImageType,
+} from "../Section.type";
 
 const HeroSection = ({
   id,
   url,
   title,
   subTitle,
-  linkFirst,
-  linkSecond,
+  links,
   svgPath,
   imgPath,
   titleImgPath,
-}: heroSectionType) => {
+  titleColor,
+}: HeroSectionType) => {
   return (
     <section>
-      <div>
-        <div>
-          <a href={url}></a>
-          <div>
+      <ConatinerStyle imgPath={imgPath}>
+        <ContentStyle titleColor={titleColor}>
+          <>
             {titleImgPath ? (
-              <>
-                <h4>
-                  <img src={titleImgPath} alt={id} />
-                </h4>
-                <h3>{subTitle}</h3>
-              </>
+              <SectionThreeStyle titleImgPath={titleImgPath} />
             ) : (
-              <>
-                <h2>{title}</h2>
-                <h3>{subTitle}</h3>
-              </>
+              <h2>{title}</h2>
             )}
-          </div>
-          <div>
-            <a href={linkFirst}>
-              <img src={svgPath} alt={id} />
-            </a>
-            <a href={linkSecond}>
-              <img src={svgPath} alt={id} />
-            </a>
-          </div>
-        </div>
-        <figure>
-          <img src={imgPath} alt={title} />
-        </figure>
-      </div>
+            <h3>{subTitle}</h3>
+            <LinksContainerStyle>
+              {links?.map((link) => (
+                <LinkStyle href={url}>
+                  {link}
+                  <SVGStyle src={svgPath} alt={id} />
+                </LinkStyle>
+              ))}
+            </LinksContainerStyle>
+          </>
+        </ContentStyle>
+      </ConatinerStyle>
     </section>
   );
 };
+
+const ConatinerStyle = styled.div<MainImageStyleType>`
+  background: ${({ imgPath }) => `url(${imgPath})`} no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 692px;
+  cursor: pointer;
+`;
+
+const ContentStyle = styled.div<ContentStyleType>`
+  color: ${({ titleColor }) => titleColor};
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding-top: 47px;
+  line-height: 1.10722;
+  font-weight: 400;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+
+  h2 {
+    font-size: 56px;
+    letter-spacing: -0.005em;
+  }
+
+  h3 {
+    font-size: 28px;
+    letter-spacing: 0.004em;
+  }
+`;
+
+const SectionThreeStyle = styled.div<TitleImageType>`
+  background: ${({ titleImgPath }) => `url(${titleImgPath})`}no-repeat center;
+  height: 71px;
+  width: 187px;
+  background-size: cover;
+`;
+
+const LinksContainerStyle = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+const LinkStyle = styled.a`
+  font-size: 21px;
+  line-height: 1.381;
+  font-weight: 400;
+  text-decoration: none;
+  color: #2997ff;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const SVGStyle = styled.img`
+  color: #2997ff;
+  width: 13px;
+`;
 
 export default HeroSection;
