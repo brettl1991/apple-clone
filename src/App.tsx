@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Navbar from "./components/Navbar/Navbar";
 import HomeSections from "./components/Section/HomeSections";
+import CollectionSection from "./components/Section/CollectionSection/CollectionSection";
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Navbar />
       <Main>
         <HomeSections />
+        <CollectionSection />
       </Main>
     </>
   );
