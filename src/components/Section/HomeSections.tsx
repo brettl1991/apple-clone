@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-import { heroData, shopData } from "../../data/sectionData";
+import { collectionData, heroData, shopData } from "../../data/sectionData";
 import ShopSection from "./ShopSection/ShopSection";
 import HeroSection from "./HeroSection/HeroSection";
+import CollectionSection from "./CollectionSection/CollectionSection";
 
 const HomeSections = () => {
   return (
@@ -21,6 +22,21 @@ const HomeSections = () => {
       {heroData.map((item, id) => {
         return (
           <HeroSection
+            key={item.id}
+            url={item.url}
+            title={item.title}
+            subTitle={item.sub_title}
+            links={item.url_title_links}
+            svgPath={item.svg_path}
+            imgPath={item.img_path}
+            titleImgPath={item.title_img_path}
+            titleColor={item.title_color}
+          />
+        );
+      })}
+      {collectionData.map((item, id) => {
+        return (
+          <CollectionSection
             key={item.id}
             url={item.url}
             title={item.title}

@@ -29,3 +29,15 @@ export type TitleImageType = {
 export type ContentStyleType = {
   titleColor?: string;
 };
+
+export type CollectionSectionType = {
+  id?: string;
+  url?: string;
+  titleColor?: string;
+  title?: string;
+  subTitle?: string;
+  links?: string[];
+  svgPath?: string;
+  imgPath?: string;
+  titleImgPath?: string;
+};
