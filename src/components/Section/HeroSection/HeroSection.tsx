@@ -21,22 +21,20 @@ const HeroSection = ({
     <section>
       <ConatinerStyle imgPath={imgPath}>
         <ContentStyle titleColor={titleColor}>
-          <>
-            {titleImgPath ? (
-              <SectionThreeStyle titleImgPath={titleImgPath} />
-            ) : (
-              <h2>{title}</h2>
-            )}
-            <h3>{subTitle}</h3>
-            <LinksContainerStyle>
-              {links?.map((link) => (
-                <LinkStyle href={url}>
-                  {link}
-                  <SVGStyle src={svgPath} alt={id} />
-                </LinkStyle>
-              ))}
-            </LinksContainerStyle>
-          </>
+          {titleImgPath ? (
+            <SectionThreeStyle titleImgPath={titleImgPath} />
+          ) : (
+            <h2>{title}</h2>
+          )}
+          <h3>{subTitle}</h3>
+          <LinksContainerStyle>
+            {links?.map((link) => (
+              <LinkStyle href={url}>
+                {link}
+                <SVGStyle src={svgPath} alt={id} />
+              </LinkStyle>
+            ))}
+          </LinksContainerStyle>
         </ContentStyle>
       </ConatinerStyle>
     </section>
@@ -49,6 +47,8 @@ const ConatinerStyle = styled.div<MainImageStyleType>`
   width: 100%;
   height: 692px;
   cursor: pointer;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
 `;
 
 const ContentStyle = styled.div<ContentStyleType>`
@@ -60,8 +60,6 @@ const ContentStyle = styled.div<ContentStyleType>`
   padding-top: 47px;
   line-height: 1.10722;
   font-weight: 400;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
 
   h2 {
     font-size: 56px;
@@ -92,8 +90,6 @@ const LinkStyle = styled.a`
   font-weight: 400;
   text-decoration: none;
   color: #2997ff;
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
 
   &:hover {
     text-decoration: underline;
