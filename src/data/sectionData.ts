@@ -92,6 +92,7 @@ export const collectionData = [
     url_title_links: ["Learn more", "Buy"],
     svg_path: "./icons/right-chevron.svg",
     img_path: "/images/airpodpro.jpg",
+    link_Color: "white",
   },
   {
     id: "06",

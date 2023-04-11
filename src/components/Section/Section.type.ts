@@ -20,6 +20,7 @@ export type HeroSectionType = {
 
 export type MainImageStyleType = {
   imgPath?: string;
+  titleColor?: string;
 };
 
 export type TitleImageType = {
@@ -40,4 +41,13 @@ export type CollectionSectionType = {
   svgPath?: string;
   imgPath?: string;
   titleImgPath?: string;
+  linkColor?: string;
+};
+
+export type TitleImgStyleType = {
+  titleImgPath?: string;
+};
+
+export type LinkStyleType = {
+  linkColor?: string;
 };
