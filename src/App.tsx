@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Navbar from "./components/Navbar/Navbar";
 import HomeSections from "./components/Section/HomeSections";
-import CollectionSection from "./components/Section/CollectionSection/CollectionSection";
+import Carousel from "./components/Carousel/Carousel";
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
       <Navbar />
       <Main>
         <HomeSections />
+        <Carousel />
       </Main>
     </>
   );
