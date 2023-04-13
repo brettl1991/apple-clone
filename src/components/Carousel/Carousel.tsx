@@ -1,13 +1,25 @@
-import React from "react";
 import styled from "styled-components";
 import CarouselItem from "./CarouselItem";
 import { carouselData } from "../../data/carouselData";
+import { useState, useEffect } from "react";
+import { CarouselInnerType } from "./Carousel.Type";
 
 const Carousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((currentSlide) =>
+        currentSlide < carouselData.length - 1 ? currentSlide + 1 : 0
+      );
+    }, 3000);
+
+    return () => clearInterval(slideInterval);
+  }, []);
   return (
     <ContainerStyle>
       <CaroselStyle>
-        <CarouselInner>
+        <CarouselInner currentSlide={currentSlide}>
           {carouselData.map((slide, idx) => (
             <CarouselItem
               key={idx}
@@ -38,6 +50,8 @@ const CaroselStyle = styled.div`
   width: 1250px;
 `;
 
-const CarouselInner = styled.div`
+const CarouselInner = styled.div<CarouselInnerType>`
   white-space: nowrap;
+  transform: ${({ currentSlide }) => `translateX(${-currentSlide * 100}%)`};
+  transition: ease 1s;
 `;

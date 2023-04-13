@@ -8,3 +8,7 @@ export type CarouselType = {
 export type BackgroundStyleType = {
   imgPath: string;
 };
+
+export type CarouselInnerType = {
+  currentSlide: number;
+};
