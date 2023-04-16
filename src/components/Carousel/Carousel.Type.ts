@@ -12,3 +12,8 @@ export type BackgroundStyleType = {
 export type CarouselInnerType = {
   currentSlide: number;
 };
+
+export type CarouselControlType = {
+  next: () => void;
+  prev: () => void;
+};

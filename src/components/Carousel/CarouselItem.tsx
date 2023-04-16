@@ -21,7 +21,6 @@ const BackgroundStyle = styled.div<BackgroundStyleType>`
   background-size: cover;
   background-position: center;
   height: 668px;
-
   display: inline-block;
   width: 100%;
 `;
