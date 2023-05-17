@@ -4,6 +4,7 @@ import HomeSections from "./components/Section/HomeSections";
 import Carousel from "./components/Carousel/Carousel";
 import { carouselData } from "./data/carouselData";
 import CarouselItem from "./components/Carousel/CarouselItem";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           ))}
         </Carousel>
       </Main>
+      <Footer />
     </>
   );
 };
