@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { footerData } from "../../data/footerData";
+import FooterNav from "./FooterNav";
 
 const Footer = () => {
   return (
@@ -34,13 +35,15 @@ const Footer = () => {
           </ol>
           <ul>
             {footerData.map((fdata) =>
-              fdata.unordered_list.map((item, idx) => <li key={idx}>{item}</li>)
+              fdata.unordered_list?.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))
             )}
           </ul>
         </SNotesSection>
 
         <hr />
-        <nav></nav>
+        <FooterNav />
         <section></section>
       </SContent>
     </footer>
