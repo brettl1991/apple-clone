@@ -5,28 +5,28 @@ import { footerData } from "../../data/footerData";
 const FooterNav = ({ title, colum }: FooterType) => {
   return (
     <SNav>
-      <div>
+      <SItemContainer>
         {footerData.map((items, idx) => {
           if (items.colum) {
             return (
-              <div>
+              <SItems>
                 {items.colum?.map((item, idx) => (
                   <div>
-                    <h3>{item.title}</h3>
+                    <STitle>{item.title}</STitle>
                     <ul>
                       {item.submenu?.map((i, idx) => (
-                        <li>{i.title}</li>
+                        <SListItem>{i.title}</SListItem>
                       ))}
                     </ul>
                   </div>
                 ))}
-              </div>
+              </SItems>
             );
           }
 
           return null;
         })}
-      </div>
+      </SItemContainer>
     </SNav>
   );
 };
@@ -47,11 +47,35 @@ const SNav = styled.nav`
 
 const SItemContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 85px;
 `;
 
-const SListItems = styled.li`
+const SItems = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const STitle = styled.h3`
+  font-size: 1em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgb(90 90 91);
+  pointer-events: auto;
+`;
+
+const SListItem = styled.li`
   list-style: none;
+  color: #424245;
+  text-decoration: none;
+  letter-spacing: normal;
+  cursor: pointer;
+  color: #78787b;
+  margin-bottom: 0.8em;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

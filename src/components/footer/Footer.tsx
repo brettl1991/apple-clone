@@ -5,7 +5,7 @@ import FooterNav from "./FooterNav";
 
 const Footer = () => {
   return (
-    <footer>
+    <SFooter>
       <SContent>
         <SLAbel>Apple Footer</SLAbel>
 
@@ -46,11 +46,15 @@ const Footer = () => {
         <FooterNav />
         <section></section>
       </SContent>
-    </footer>
+    </SFooter>
   );
 };
 
 export default Footer;
+
+const SFooter = styled.footer`
+  background: #f5f5f7;
+`;
 
 const SContent = styled.div`
   margin: 0 auto;
