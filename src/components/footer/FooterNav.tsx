@@ -54,7 +54,7 @@ const SItemContainer = styled.div`
 const SItems = styled.li`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 15px;
 `;
 
 const STitle = styled.h3`

@@ -179,6 +179,10 @@ export const footerData = [
           },
         ],
       },
+    ],
+  },
+  {
+    colum: [
       {
         title: "For Business",
         submenu: [
@@ -192,10 +196,6 @@ export const footerData = [
           },
         ],
       },
-    ],
-  },
-  {
-    colum: [
       {
         title: "For Education",
         submenu: [
